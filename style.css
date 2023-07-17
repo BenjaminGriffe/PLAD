@@ -293,6 +293,65 @@ footer {
   color: var(--color2);
   text-decoration: none;
 }
+#side-bar {
+  position: absolute;
+  width: 230px;
+  height: 100%;
+  background: var(--color3);
+  top: 0;
+  right: -230px;
+  transition: 0.5s ease-out;
+  z-index: 4;
+}
+.toggle-btn {
+  position: absolute;
+  top: 30px;
+  right: 260px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+.toggle-btn span {
+  width: 60px;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--color3);
+  display: block;
+  margin-top: 4px;
+  transition: 0.3s ease;
+}
+.nav li {
+  color: #292929;
+  list-style: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding-right: 10px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  text-align: right;
+}
+.nav li:hover {
+  background: #292929;
+  color: #fcfcfb;
+}
+#side-bar.active {
+  right: 0;
+}
+.active span {
+  position: absolute;
+}
+.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.active span:nth-child(2) {
+  opacity: 0;
+}
+.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+.active ~ .content {
+  opacity: 0.7;
+}
 
 /* Responsive */
 @media all and (max-width: 767px) {
@@ -332,117 +391,123 @@ footer {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 25% 25% 25% 25%;
-  grid-template-areas: 
-  "z1 z2 z3 z4"
-  "z5 z6 z7 z8"
-  "z9 z10 z11 z12"
-  "z13 z14 z15 z16";
+  grid-template-areas:
+    "z1 z2 z3 z4"
+    "z5 z6 z7 z8"
+    "z9 z10 z11 z12"
+    "z13 z14 z15 z16";
 }
 
 #mc1 {
-    background: url(./img/green.png) bottom/cover;
-    grid-area: z5;
-    border: 6px solid var(--color1);
-    align-items: center;
-    text-align: center;
+  background: url(./img/green.png) bottom/cover;
+  grid-area: z5;
+  border: 6px solid var(--color1);
+  align-items: center;
+  text-align: center;
 }
 #mc2 {
-    background: var(--color2);
-    color: var(--color4);
-    grid-area: z2;
-    border: 6px solid var(--color1);
-    align-items: center;
-    text-align: center;
+  background: var(--color2);
+  color: var(--color4);
+  grid-area: z2;
+  border: 6px solid var(--color1);
+  align-items: center;
+  text-align: center;
 }
 #mc3 {
-    background: var(--color3);
-    grid-area: z12;
-    border: 6px solid var(--color1);
-    align-items: center;
-    text-align: center;
+  background: var(--color3);
+  grid-area: z12;
+  border: 6px solid var(--color1);
+  align-items: center;
+  text-align: center;
 }
 #mc4 {
-    background: var(--color4);
-    grid-area: z6;
-    border: 6px solid var(--color1);
-    align-items: center;
-    text-align: center;
+  background: var(--color4);
+  grid-area: z6;
+  border: 6px solid var(--color1);
+  align-items: center;
+  text-align: center;
 }
 #mc5 {
-    background: url(./img/green.png) bottom/cover;
-    grid-area: z8;
-    border: 6px solid var(--color1);
-    align-items: center;
-    text-align: center;
+  background: url(./img/green.png) bottom/cover;
+  grid-area: z8;
+  border: 6px solid var(--color1);
+  align-items: center;
+  text-align: center;
 }
 #mc6 {
-    background: var(--color4);
-    grid-area: z13;
-    border: 6px solid var(--color1);
-    align-items: center;
-    text-align: center;
+  background: var(--color4);
+  grid-area: z13;
+  border: 6px solid var(--color1);
+  align-items: center;
+  text-align: center;
 }
 #mc7 {
-    background: var(--color3);
-    grid-area: z4;
-    border: 6px solid var(--color1);
-    align-items: center;
-    text-align: center;
+  background: var(--color3);
+  grid-area: z4;
+  border: 6px solid var(--color1);
+  align-items: center;
+  text-align: center;
 }
 #mc8 {
-    background: var(--color3);
-    grid-area: z10;
-    border: 6px solid var(--color1);
-    align-items: center;
-    text-align: center;
+  background: var(--color3);
+  grid-area: z10;
+  border: 6px solid var(--color1);
+  align-items: center;
+  text-align: center;
 }
 #mc9 {
-    background: var(--color2);
-    color: var(--color4);
-    grid-area: z7;
-    border: 6px solid var(--color1);
-    align-items: center;
-    text-align: center;
+  background: var(--color2);
+  color: var(--color4);
+  grid-area: z7;
+  border: 6px solid var(--color1);
+  align-items: center;
+  text-align: center;
 }
 
 #mc1 h2 {
-   font-size: 2rem;
-   margin-top: 40px; 
+  font-size: 2rem;
+  margin-top: 40px;
 }
 #mc2 h2 {
-   font-size: 2rem;
-   margin-top: 40px; 
+  font-size: 2rem;
+  margin-top: 40px;
 }
 #mc3 h2 {
-   font-size: 2rem;
-   margin-top: 40px; 
+  font-size: 2rem;
+  margin-top: 40px;
 }
 #mc4 h2 {
-   font-size: 2rem;
-   margin-top: 40px; 
+  font-size: 2rem;
+  margin-top: 40px;
 }
 #mc5 h2 {
-   font-size: 2rem;
-   margin-top: 40px; 
+  font-size: 2rem;
+  margin-top: 40px;
 }
 #mc6 h2 {
-   font-size: 2rem;
-   margin-top: 40px; 
+  font-size: 2rem;
+  margin-top: 40px;
 }
 #mc7 h2 {
-   font-size: 2rem;
-   margin-top: 40px; 
+  font-size: 2rem;
+  margin-top: 40px;
 }
 #mc8 h2 {
-   font-size: 2rem;
-   margin-top: 40px; 
+  font-size: 2rem;
+  margin-top: 40px;
 }
 #mc9 h2 {
-   font-size: 2rem;
-   margin-top: 40px; 
+  font-size: 2rem;
+  margin-top: 40px;
 }
 .logo {
-    background: url(./img/logo.png) center/cover;
-    width: 180px;
-    height: 90px;
+  background: url(./img/logo.png) center/cover;
+  width: 180px;
+  height: 90px;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: var(--color1);
 }

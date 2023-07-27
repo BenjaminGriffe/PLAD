@@ -233,6 +233,71 @@ a .btn {
   top: 30px;
 }
 
+/*Roadmap2*/
+.roadmap2 {
+  background: var(--color1);
+  padding: 4rem 0;
+  color: var(--color2);
+}
+
+.roadmap2 h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.roadmap2 .bloc {
+  background: var(--color4);
+  margin-bottom: 3rem;
+  padding: 1rem;
+  position: relative;
+  margin-left: 2px;
+}
+
+.roadmap2 h4 {
+  margin: 1rem 0;
+}
+
+.roadmap2 p {
+  line-height: 1.5rem;
+}
+
+.roadmap2 .number {
+  position: absolute;
+  top: -1rem;
+  left: calc(1rem - 1px);
+  background: var(--color3);
+  padding: 1rem;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roadmap2 .number.off {
+  background: var(--color2);
+  color: var(--color3);
+}
+
+.roadmap2 .container {
+  position: relative;
+}
+
+@media all and (max-width: 500px) {
+  #mosaic {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  #mosa-container {
+    height: 1500px;
+  }
+}
+
 /* Team */
 .team {
   padding: 4rem 0;
@@ -252,6 +317,14 @@ a .btn {
 
 .team .member {
   width: 31%;
+}
+.team #solo {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+.team #SLD {
+  width: 100%;
 }
 
 .team .member img {
